@@ -1,0 +1,34 @@
+import express from 'express';
+const router = express.Router();
+
+router.route("/").get((req, res) => {
+    res.status(200).json({
+        message: "Get all contacts"
+    })
+});
+
+router.route("/").post((req, res) => {
+    res.status(200).json({
+        message: "Create a new contact"
+    })
+});
+
+router.route("/:id").get((req, res) => {
+    res.status(200).json({
+        message: `Get contact for ${req.params.id}`
+    })
+});
+
+router.route("/:id").put((req, res) => {
+    res.status(200).json({
+        message: `Update contact for ${req.params.id}`
+    })
+});
+
+router.route("/:id").delete((req, res) => {
+    res.status(200).json({
+        message: `Delete contact for ${req.params.id}`
+    })
+});
+
+export default router;
